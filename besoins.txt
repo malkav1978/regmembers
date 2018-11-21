@@ -1,0 +1,42 @@
+----------------------------
+>>> Registre des membres <<<
+----------------------------
+
+-- Contexte et besoin --
+
+Les statuts de l'association DDJ spécifie que la direction de l'association tien à jour un registre des membres.
+
+D'une façon pratique, ce registre permet:
+
+ - d'envoyer des courriers aux membre de l'association (convocations pour l'AG).
+ - de connaitre le nombres d'adhérents (mise à jour contrat d'assurance, etc.)
+ 
+A l'heure actuelle, le registre des membres est tenu dans un tableur et la direction de l'association souhaite un outil dédié et plus pratique. la direction de l'association souhaite également conserver l'historique des adhérents pour la durée de vie de l'association.
+ 
+-- Fonctionnalités attendues --
+
+Ajout d'un membre
+Modification d'un membre
+Suppression d'un membre (?)
+Radiation d'un membre
+Visualisation de la liste des membres (filtrable)
+Gestion des membres actifs, membres d'honneur, ancien membres et membres radiés (motif)
+
+Les données collectés sur les membres correspondent aux champs des fiches d'inscription (version adulte et jeune). --> Faire la liste.
+
+Export des données au formats VCF, csv (+xml)
+Import de donnée au formats csv (+xml)
+
+Creation d'état/statistique:
+ - nommbre de membre par années (période)
+ - période d'adhésion d'un membre
+ - répartition géographique
+ - nouveaux membres d'un années
+ - entrée et sortie par année
+ 
+-- Cahier des charges --
+
+L'outil se présentera sous la forme d'un client lourd écrit en C++ avec le framework Qt.
+Les données sont stockés dans une base de données MySQL ou MariaDB.
+
+1. 
