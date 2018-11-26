@@ -1,3 +1,4 @@
+#include <QDebug>
 #include <QFileDialog>
 
 #include "mainwindow.h"
@@ -32,8 +33,8 @@ Member MainWindow::createMember(const QString &csvLine, char separator) const
     {
         Member data;
 
-        data.setFirstname(items.at(0));
-        data.setName(items.at(1));
+        data.setName(items.at(0));
+        data.setFirstname(items.at(1));
         data.setEmail(items.at(8));
 
         return data;
@@ -45,7 +46,8 @@ Member MainWindow::createMember(const QString &csvLine, char separator) const
 }
 
 //!
-//! \brief MainWindow::importCsvFile
+//! Import members data from the specified CSV file.
+//!
 //! \param filename
 //! \return
 //!
@@ -93,8 +95,15 @@ void MainWindow::import()
     {
         membersList = importCsvFile(filename);
 
+        foreach(Member item, membersList)
+        {
+            qDebug() << " > " << item.name();
+        }
+
+        /*
         model.setMembersList(membersList);
         ui->treeView->reset();
         ui->treeView->setModel(&model);
+        */
     }
 }
