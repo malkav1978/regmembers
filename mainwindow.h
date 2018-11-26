@@ -23,8 +23,8 @@ public:
 private:
     Ui::MainWindow *ui;
 
-    MemberList membersList;
-    MembersModel model;
+    //! Holds the list of the association members.
+    MemberList m_MembersList;
 
     Member createMember(const QString &csvLine, char separator = ';') const;
 

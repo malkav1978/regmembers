@@ -93,17 +93,19 @@ void MainWindow::import()
     filename = QFileDialog::getOpenFileName(this, tr("Importer un fichier de membres..."), QDir::homePath(), tr("Fichier CSV (*.csv)"));
     if(!filename.isEmpty())
     {
-        membersList = importCsvFile(filename);
+        // Import data from CSV file
+        m_MembersList = importCsvFile(filename);
 
-        foreach(Member item, membersList)
+        foreach(Member item, m_MembersList)
         {
             qDebug() << " > " << item.name();
         }
 
-        /*
-        model.setMembersList(membersList);
-        ui->treeView->reset();
-        ui->treeView->setModel(&model);
-        */
+        // Creating the model
+        MembersModel *pModel = new MembersModel(ui->treeView);
+        pModel->setMembersList(m_MembersList);
+
+        // ui->treeView->reset();
+        ui->treeView->setModel(pModel);
     }
 }

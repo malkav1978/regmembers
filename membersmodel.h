@@ -1,18 +1,22 @@
 #ifndef MEMBERSMODEL_H
 #define MEMBERSMODEL_H
 
-#include <QAbstractTableModel>
+#include <QAbstractItemModel>
 #include <QStringList>
 
 #include <member.h>
 #include <memberlist.h>
 
-class MembersModel : public QAbstractTableModel
+//!
+//! \brief The MembersModel class
+//!
+class MembersModel : public QAbstractItemModel
 {
     Q_OBJECT
 public:
     explicit MembersModel(QObject *parent = nullptr);
 
+    //
     void setMembersList(const MemberList &list);
 
     // Reimplemented functions from QAbstractItemModel
@@ -33,8 +37,10 @@ private:
     //! Holds the titles from the horizontal header.
     QStringList m_Titles;
 
-    //! Holds
-    MemberList membersList;
+    //! Holds the list of
+    MemberList m_MembersList;
+
+    QString displayItem(int row, int column) const;
 
 };
 
