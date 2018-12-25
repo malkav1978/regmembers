@@ -1,9 +1,9 @@
 #ifndef MEMBERLIST_H
 #define MEMBERLIST_H
 
-#include <QList>
+class QList;
 
-#include <member.h>
+class Member;
 
 //!
 //! \brief The memberList class
@@ -12,10 +12,6 @@ class MemberList : public QList<Member>
 {
 public:
     MemberList();
-
-    // Sorting functions
-
-    // Filtering and search functions
 
 };
 
